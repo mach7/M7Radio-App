@@ -34,6 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        if(PushbotsPlugin.isiOS()){
+        PushbotsPlugin.initializeiOS("55548a221779599f698b4567");
+        }
+        if(PushbotsPlugin.isAndroid()){
+        PushbotsPlugin.initializeAndroid("55548a221779599f698b4567", "1083942295394");
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
