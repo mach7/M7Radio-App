@@ -17,20 +17,26 @@
                 function pauseAudio(){
                         liveAudio.pause();
                 }
-                window.onload = function() {
-                var backgroundAudio=document.getElementById("liveAudio");
-                backgroundAudio.volume=0.1;
+                function loadChat(){
+                    document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/assets/app/test.php" width="100%" height="80%" frameborder="0" id="appChat"></iframe>';
                 }
+                function loadRequests(){
+                    document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/requests" width="100%" height="80%" frameborder="0" id="appRequests"></iframe>';
+                }
+                window.onload=loadChat;
         </script>
     </head>
     <body>
-        <img src="img/header.jpg"/>
-		<audio autoplay="autoplay" id="liveAudio" src="http://sc.mach7radio.com:8343/;"></audio>
-		<iframe src="http://mach7radio.com/assets/app/test.php" width="100%" height="80%" frameborder="0" id="appChat"></iframe>
+<img src="img/header.jpg"/>
+<button onClick="loadChat();" class="btn btn-primary btn-lg">Chat</button><button onClick="loadRequests();" class="btn btn-primary btn-lg">Requests</button>
+<hr/>
+<div id="showContent"></div>
 <div id="ftrBtns">
 <button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>
+
 <button onClick="pauseAudio();" class="btn btn-primary btn-lg" style="float:right;"><img src="img/stop.png" width="40px" height="40px"/></button>
-    </div>
+</div>
+<audio autoplay="autoplay" id="liveAudio" src="http://sc.mach7radio.com:8343/;"></audio>
 <script type="text/javascript" src="cordova.js"></script>
-    </body>
+</body>
 </html>
