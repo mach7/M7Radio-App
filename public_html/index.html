@@ -9,14 +9,20 @@
         <script type="text/javascript" src="js/index.js"></script>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Mach7 Radio</title>
         <script>
                 var audio = document.getElementById('liveAudio');
                 function playAudio(){
                         liveAudio.play();
+                        document.getElementById('playBtn').innerHTML='<button onClick="pauseAudio();" class="btn btn-primary btn-lg"><img src="img/pause.png" width="40px" height="40px"/></button>';
                 }
                 function pauseAudio(){
                         liveAudio.pause();
+                        document.getElementById('playBtn').innerHTML='<button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>';
+                }
+                function stopAudio(){
+                        liveAudio.pause();
+                        document.getElementById('playBtn').innerHTML='<button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>';
                 }
                 function loadChat(){
                     document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/assets/app/test.php" width="100%" height="80%" frameborder="0" id="appChat"></iframe>';
@@ -24,14 +30,11 @@
                 function loadRequests(){
                     document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/requests" width="100%" height="80%" frameborder="0" id="appRequests"></iframe>';
                 }
-                window.onload=loadChat;
-                
-if(PushbotsPlugin.isiOS()){
-PushbotsPlugin.initializeiOS("550db30ac4cc0e61d592a0c2246b86a0");
-}
-if(PushbotsPlugin.isAndroid()){
-PushbotsPlugin.initializeAndroid("550db30ac4cc0e61d592a0c2246b86a0", "1083942295394");
-}
+                function init(){
+                    loadChat();
+                    playAudio();
+                }
+                window.onload=init;
         </script>
     </head>
     <body>
@@ -40,9 +43,9 @@ PushbotsPlugin.initializeAndroid("550db30ac4cc0e61d592a0c2246b86a0", "1083942295
 <hr/>
 <div id="showContent"></div>
 <div id="ftrBtns">
-<button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>
+    <div id="playBtn"></div>
 
-<button onClick="pauseAudio();" class="btn btn-primary btn-lg" style="float:right;"><img src="img/stop.png" width="40px" height="40px"/></button>
+<button onClick="stopAudio();" class="btn btn-primary btn-lg" style="float:right;"><img src="img/stop.png" width="40px" height="40px"/></button>
 </div>
 <audio id="liveAudio" src="http://sc.mach7radio.com:8343/;"></audio>
 <script type="text/javascript" src="cordova.js"></script>
