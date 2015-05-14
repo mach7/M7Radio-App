@@ -25,6 +25,13 @@
                     document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/requests" width="100%" height="80%" frameborder="0" id="appRequests"></iframe>';
                 }
                 window.onload=loadChat;
+                
+if(PushbotsPlugin.isiOS()){
+PushbotsPlugin.initializeiOS("550db30ac4cc0e61d592a0c2246b86a0");
+}
+if(PushbotsPlugin.isAndroid()){
+PushbotsPlugin.initializeAndroid("550db30ac4cc0e61d592a0c2246b86a0", "1083942295394");
+}
         </script>
     </head>
     <body>
