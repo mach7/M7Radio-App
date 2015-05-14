@@ -9,19 +9,25 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
-		<script>
-			var audio = document.getElementById('liveAudio');
-			function playAudio(){
-				liveAudio.play();
-			}
-			function pauseAudio(){
-				liveAudio.pause();
-			}
-                        window.onload = function() {
-                        var backgroundAudio=document.getElementById("liveAudio");
-                        backgroundAudio.volume=0.1;
-                        }
-</script>
+        <script>
+                var audio = document.getElementById('liveAudio');
+                function playAudio(){
+                        liveAudio.play();
+                }
+                function pauseAudio(){
+                        liveAudio.pause();
+                }
+                window.onload = function() {
+                var backgroundAudio=document.getElementById("liveAudio");
+                backgroundAudio.volume=0.1;
+                }
+                if(PushbotsPlugin.isiOS()){
+                PushbotsPlugin.initializeiOS("55548a221779599f698b4567");
+                }
+                if(PushbotsPlugin.isAndroid()){
+                PushbotsPlugin.initializeAndroid("55548a221779599f698b4567", "1083942295394");
+                }
+        </script>
     </head>
     <body>
         <img src="img/header.jpg"/>
