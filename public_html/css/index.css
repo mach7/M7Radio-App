@@ -100,7 +100,7 @@ h1 {
 
 
 #ftrBtns{
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
     background:#000000;
