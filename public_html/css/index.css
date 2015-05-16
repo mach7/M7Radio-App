@@ -97,13 +97,18 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
-
+#topContent{
+    z-index:1;
+}
+#showContent{
+    z-index: -1;
+}
 #ftrBtns{
     position:fixed;
     bottom:0;
     width:100%;
     background:#000000;
+    z-index: 1;
 }
 #playBtn{
     float:left;
