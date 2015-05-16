@@ -98,7 +98,11 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 #topContent{
-    z-index:1;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    border-bottom: #000 solid 2px;
+    z-index: 1;
 }
 #showContent{
     z-index: -1;
