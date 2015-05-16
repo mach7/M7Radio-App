@@ -99,8 +99,9 @@ h1 {
 }
 #topContent{
     position:fixed;
-    bottom:0;
+    top:0;
     width:100%;
+    background:#fff;
     border-bottom: #000 solid 2px;
     z-index: 1;
 }
