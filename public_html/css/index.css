@@ -100,6 +100,8 @@ h1 {
 #topContent{
     position:fixed;
     top:0;
+    margin-top:4px;
+    margin-left: 4px; 
     width:100%;
     height:95px;
     background:#fff;
