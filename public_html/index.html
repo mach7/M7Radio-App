@@ -10,32 +10,6 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Mach7 Radio</title>
-        <script>
-                var audio = document.getElementById('liveAudio');
-                function playAudio(){
-                        liveAudio.play();
-                        document.getElementById('playBtn').innerHTML='<button onClick="pauseAudio();" class="btn btn-primary btn-lg"><img src="img/pause.png" width="40px" height="40px"/></button>';
-                }
-                function pauseAudio(){
-                        liveAudio.pause();
-                        document.getElementById('playBtn').innerHTML='<button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>';
-                }
-                function stopAudio(){
-                        liveAudio.pause();
-                        document.getElementById('playBtn').innerHTML='<button onClick="playAudio();" class="btn btn-primary btn-lg"><img src="img/play.png" width="40px" height="40px"/></button>';
-                }
-                function loadChat(){
-                    document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/assets/app/index.php" width="100%" height="100%" frameborder="0" id="appChat"></iframe>';
-                }
-                function loadRequests(){
-                    document.getElementById('showContent').innerHTML='<iframe src="http://mach7radio.com/requests" width="100%" height="100%" frameborder="0" id="appRequests"></iframe>';
-                }
-                function init(){
-                    loadChat();
-                    playAudio();
-                }
-                window.onload=init;
-        </script>
     </head>
 <body>
 <div id="topContent">
