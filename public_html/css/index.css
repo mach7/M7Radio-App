@@ -106,6 +106,9 @@ h1 {
     border-bottom: #000 solid 2px;
     z-index: 1;
 }
+#topContent img {
+    width:25%;
+}
 #showContent{
     z-index: -1;
 }
